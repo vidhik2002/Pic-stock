@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-
+from .models import *
 # Create your views here.
 
 
@@ -12,4 +12,7 @@ def show_about_page(request):
 
 
 def home_page(request):
-    return render(request, "homepage.html", {})
+    images = Image_Create.objects.all()
+    cat = Category.objects.all()
+    context = {'images': images, 'cat': cat}
+    return render(request, "homepage.html", context)

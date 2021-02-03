@@ -20,4 +20,4 @@ class Image_Create(models.Model):
     cat = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.Image
+        return ("{}".format(self.Title))
