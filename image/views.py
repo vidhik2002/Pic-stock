@@ -11,8 +11,12 @@ def show_about_page(request):
     return render(request, "aboutus.html", {})
 
 
-def home_page(request):
+def show_home_page(request):
     images = Image_Create.objects.all()
     cat = Category.objects.all()
     context = {'images': images, 'cat': cat}
     return render(request, "homepage.html", context)
+
+
+def category_page(request):
+    pass
