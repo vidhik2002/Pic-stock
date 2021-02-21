@@ -12,7 +12,11 @@
 
       <style>
           .bg{
-              background:#62757f!important
+              background:#62757f!important;
+          }
+          .list-group-item.active {
+              background:#62757f!important;
+              border-color:#62757f!important;
           }
       </style>
 
@@ -22,19 +26,15 @@
     {% include 'navbar.html' %}
 
 
-{#    main code#}
+    {# category #}
     <div class="row">
         <div class="col-md-2">
             <ul class="list-group mt-3">
                 <li class="list-group-item active">Category</li>
-                {% for i in cat %}
-                <a href="/category/{{ c.pk }}" class="list-group-item">{{ i.Title }}</a>
+                {% for i in cats %}
+                    <a href="/category/{{ i.pk }}" class="list-group-item">{{ i.Title }}</a>
                 {% endfor %}
             </ul>
-
-
-
-
         </div>
         <div class="col-md-10">
            {# images#}
@@ -51,10 +51,7 @@
                                     <a href="#" class="btn btn-primary">View</a>
                                 </div>
                             </div>
-
                       {% endfor %}
-
-
 
                    </div>
                </div>

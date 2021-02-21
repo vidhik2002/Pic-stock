@@ -13,10 +13,19 @@ def show_about_page(request):
 
 def show_home_page(request):
     images = Image_Create.objects.all()
-    cat = Category.objects.all()
-    context = {'images': images, 'cat': cat}
+    cats = Category.objects.all()
+    context = {'images': images, 'cats': cats}
     return render(request, "homepage.html", context)
 
 
-def category_page(request):
-    pass
+def show_category_page(request, c):
+    cats = Category.objects.all()
+    images = Image_Create.objects.filter(cat__pk=c)
+    print(cats.count())
+    print(images.count())
+    print(c)
+    context = {'images': images, 'cats': cats}
+    return render(request, "homepage.html", context)
+
+
+
