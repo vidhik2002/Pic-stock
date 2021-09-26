@@ -3,7 +3,7 @@
 ## Installation
 1. Clone the repo
 ```sh
-git clone 
+git clone https://github.com/vidhik2002/Pic-stock.git
 ```
 2. Move into folder
 ```sh
